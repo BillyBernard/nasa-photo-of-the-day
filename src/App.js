@@ -6,6 +6,12 @@ import Header from './components/Header'
 import Cards from './components/Cards'
 import Footer from './components/Footer'
 
+import styled, { keyframes } from 'styled-components';
+
+const StyledBack = styled.div`
+  background-color: #5D4E60;
+`
+
 
 function App() {
   const [nasaApod, setNasaApod] = useState({})
@@ -22,7 +28,7 @@ function App() {
   
 
   return (
-    <div className="App">
+    <StyledBack className="App">
       <Header />
       {/* <p>
         Read through the instructions in the README.md file to build your NASA
@@ -30,7 +36,7 @@ function App() {
       </p> */}
       <Cards nasaApod={nasaApod}/>
       <Footer />
-    </div>
+    </StyledBack>
   );
 }
 
