@@ -1,4 +1,20 @@
 import React, { useState, useEffect} from 'react'
+import styled, { keyframes } from 'styled-components';
+
+const StyledCard = styled.div`
+    display: block;
+    margin: 2em;
+`
+
+const StyledImgDiv = styled.div`
+    background-color: ${pr => pr.theme.fifthColor};
+    margin: 2em;
+    padding: 5em;
+`
+
+const StyledImg = styled.img`
+    width: 50%;
+`
 
 const Cards = (props) => {
     const {nasaApod} = props
@@ -6,13 +22,13 @@ const Cards = (props) => {
 
 
     return(
-        <div>
+        <StyledCard>
             <h2>
                 Title: {nasaApod.title}
             </h2>
-            <div className='dailyImg'>
-                <img src = {nasaApod.url} alt='space' />
-            </div>
+            <StyledImgDiv className='dailyImg'>
+                <StyledImg src = {nasaApod.url} alt='space' />
+            </StyledImgDiv>
             <h3>
                 Date: {nasaApod.date}
             </h3>
@@ -22,7 +38,7 @@ const Cards = (props) => {
             <p>
 
             </p>
-        </div>
+        </StyledCard>
     )
 }
 export default Cards
